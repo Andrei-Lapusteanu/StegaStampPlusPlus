@@ -1,0 +1,56 @@
+﻿<Window x:Class="QRColor.MainUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QRColor"
+        mc:Ignorable="d"
+        Title="QRColor" Height="860" Width="1420">
+    <Grid Background="#FF2C2C2C">
+
+        <TextBox x:Name="textBoxMain" Background="#FF3C3C3C" Foreground="White"  FontSize="14" TextWrapping="Wrap" Width="320" Height="140" TextChanged="MainTextBox_TextChanged" HorizontalAlignment="Right" Margin="0,665,827,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxDecoded" Background="#FF3C3C3C" FontSize="14" Foreground="White"  TextWrapping="Wrap" Width="320" Height="140" HorizontalAlignment="Right" Margin="0,665,487,0" IsEnabled="False" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textBoxDecodedRed" Background="#FF3C3C3C" FontSize="18" Foreground="White"  TextWrapping="Wrap" Width="230" Height="140" HorizontalAlignment="Right" Margin="0,135,22,0" IsEnabled="False" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxDecodedGrn" Background="#FF3C3C3C" FontSize="18" Foreground="White"  TextWrapping="Wrap" Width="230" Height="140" HorizontalAlignment="Right" Margin="0,395,22,0" IsEnabled="False" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxDecodedBlu" Background="#FF3C3C3C" FontSize="18" Foreground="White"  TextWrapping="Wrap" Width="230" Height="140" HorizontalAlignment="Right" Margin="0,665,22,0" IsEnabled="False" VerticalAlignment="Top"/>
+
+        <Image x:Name="masterImage" Cursor="Hand" ClipToBounds="False" Height="400" Source="../img/empty.png" HorizontalAlignment="Center" Margin="400,205,612,224"/>
+        <Image x:Name="imageInputRed" Cursor="Hand" ClipToBounds="False" Height="200" Width="200" Source="../img/empty.png" HorizontalAlignment="Center" Margin="25,75,1167,554"/>
+        <Image x:Name="imageInputGrn" Cursor="Hand" ClipToBounds="False" Height="200" Width="200" Source="../img/empty.png" HorizontalAlignment="Center" Margin="25,335,1167,294"/>
+        <Image x:Name="imageInputBlu" Cursor="Hand" ClipToBounds="False" Height="200" Width="200" Source="../img/empty.png" HorizontalAlignment="Center" Margin="25,605,1167,24"/>
+        <Image x:Name="imageOutputRed" Cursor="Hand" ClipToBounds="False" Height="200" Width="200" Source="../img/empty.png" HorizontalAlignment="Center" Margin="935,75,257,554"/>
+        <Image x:Name="imageOutputGrn" Cursor="Hand" ClipToBounds="False" Height="200" Width="200" Source="../img/empty.png" HorizontalAlignment="Center" Margin="935,335,257,294"/>
+        <Image x:Name="imageOutputBlu" Cursor="Hand" ClipToBounds="False" Height="200" Width="200" Source="../img/empty.png" HorizontalAlignment="Center" Margin="935,605,257,24"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="275,626,0,0" TextWrapping="Wrap" Text="Input message" Foreground="White" FontWeight="Normal" TextAlignment="Center" FontSize="24" VerticalAlignment="Top" Width="295" Height="34"/>
+        <TextBlock HorizontalAlignment="Left" Margin="600,626,0,0" TextWrapping="Wrap" Text="Decoded message (complete)" Foreground="White" FontSize="24" FontWeight="Normal" TextAlignment="Center" VerticalAlignment="Top" Width="315" Height="34"/>
+        <TextBlock HorizontalAlignment="Left" Margin="460,166,0,0" TextWrapping="Wrap" Text="Computed QR Code" FontWeight="Bold" Foreground="White" FontSize="26" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,571,0,0" TextWrapping="Wrap" Text="Input Blue channel" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,301,0,0" TextWrapping="Wrap" Text="Input Green channel" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,44,0,0" TextWrapping="Wrap" Text="Input Red channel" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="945,41,0,0" TextWrapping="Wrap" Text="Output Red channel" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="945,301,0,0" TextWrapping="Wrap" Text="Output Green channel" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="945,566,0,0" TextWrapping="Wrap" Text="Output Blue channel" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1160,101,-48,0" TextWrapping="Wrap" Text="Decoded message" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1160,361,-48,0" TextWrapping="Wrap" Text="Decoded message" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1160,626,-48,0" TextWrapping="Wrap" Text="Decoded message" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="300" Height="34" RenderTransformOrigin="0.55,0.559"/>
+
+        <CheckBox x:Name="checkBoxColor" Content="Color" HorizontalAlignment="Left" Margin="455,43,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" IsChecked="True" Click="CheckBoxColor_Click"/>
+        <CheckBox x:Name="checkBoxECC" Content="ECC" HorizontalAlignment="Left" Margin="455,109,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Click="CheckBoxECC_Click"/>
+        <ComboBox x:Name="comboBoxCellSize" HorizontalAlignment="Left" Margin="690,48,0,0" SelectedIndex="4" VerticalAlignment="Top" Width="50" Background="AliceBlue" SelectionChanged="ComboBoxCellSize_SelectionChanged">
+            <ComboBoxItem Name="cbi0">2</ComboBoxItem>
+            <ComboBoxItem Name="cbi1">4</ComboBoxItem>
+            <ComboBoxItem Name="cbi2">5</ComboBoxItem>
+            <ComboBoxItem Name="cbi3">8</ComboBoxItem>
+            <ComboBoxItem Name="cbi4">10</ComboBoxItem>
+            <ComboBoxItem Name="cbi5">16</ComboBoxItem>
+            <ComboBoxItem Name="cbi6">20</ComboBoxItem>
+            <ComboBoxItem Name="cbi7">25</ComboBoxItem>
+            <ComboBoxItem Name="cbi8">40</ComboBoxItem>
+            <ComboBoxItem Name="cbi9">80</ComboBoxItem>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="565,41,0,0" TextWrapping="Wrap" Text="QR cell size" FontWeight="Normal" Foreground="White" FontSize="23" VerticalAlignment="Top" Width="130" Height="85" RenderTransformOrigin="0.55,0.559"/>
+
+    </Grid>
+</Window>
